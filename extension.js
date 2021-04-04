@@ -13,23 +13,24 @@ function activate(context) {
 
 		let type = '';
 		const actionNames = ['add_action', 'do_action', 'add_filter', 'apply_filters'];
-		const regex = /('|")(.*?)('|")/ig;
-		const check = currentLine.match(regex);
+		const position = editor.selection.active;
+		const currentLocation = currentLine.slice(0, position._character);
+		const tagCount = currentLocation.match(new RegExp(text, 'g')).length;
 		
-		if(check.length === 1) {
-			actionNames.forEach(action => {
-				if(currentLine.includes(action)) {
-					type = action;
-				}
-			})
-		} else if(check.length > 1) {
-			if(check[1] === `'${text}'`) {
+		if(tagCount > 1) {
+			type = 'function';
+		} else {
+			const regex = /(\w)+/ig;
+			const check = currentLocation.match(regex);
+			const index = check.findIndex((item) => item === text);
+			if(index > 1) {
 				type = 'function';
 			} else {
-				const regex = /(\w)+/ig;
-				const check = currentLine.match(regex);
-				const actionName = check[0];
-				type = actionName;
+				actionNames.forEach(action => {
+					if(currentLocation.includes(action)) {
+						type = action;
+					}
+				})
 			}
 		}
 
