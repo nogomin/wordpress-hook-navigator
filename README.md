@@ -14,5 +14,3 @@ Find function definition
 
 Find hook definition
 ![hook_1](./images/find_hook.gif)
-
-![hook_2](./images/find_hook2.gif)

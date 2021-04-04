@@ -20,10 +20,10 @@ function activate(context) {
 		if(tagCount > 1) {
 			type = 'function';
 		} else {
-			const regex = /(\w)+/ig;
+			const regex = /'\w+/ig;
 			const check = currentLocation.match(regex);
-			const index = check.findIndex((item) => item === text);
-			if(index > 1) {
+			const index = check.findIndex((item) => item === `'${text}`);
+			if(index > 0) {
 				type = 'function';
 			} else {
 				actionNames.forEach(action => {
@@ -85,7 +85,7 @@ function activate(context) {
 		} else {
 			if(type === 'add_action') {
 				vscode.commands.executeCommand('workbench.action.findInFiles', {
-					query: 'do_action(\\s+)?\\((\\s+)?\'' + text,
+					query: 'do_action(\\s+)?\\((\\s+)?\'' + text + "'",
 					triggerSearch: true,
 					isRegex: true,
 					isCaseSensitive: false,
@@ -93,7 +93,7 @@ function activate(context) {
 				});
 			} else if(type === 'do_action') {
 				vscode.commands.executeCommand('workbench.action.findInFiles', {
-					query: 'add_action(\\s+)?\\((\\s+)?\'' + text,
+					query: 'add_action(\\s+)?\\((\\s+)?\'' + text + "'",
 					triggerSearch: true,
 					isRegex: true,
 					isCaseSensitive: false,
@@ -101,7 +101,7 @@ function activate(context) {
 				});
 			} else if(type === 'add_filter') {
 				vscode.commands.executeCommand('workbench.action.findInFiles', {
-					query: 'apply_filters(\\s+)?\\((\\s+)?\'' + text,
+					query: 'apply_filters(\\s+)?\\((\\s+)?\'' + text + "'",
 					triggerSearch: true,
 					isRegex: true,
 					isCaseSensitive: false,
@@ -109,7 +109,7 @@ function activate(context) {
 				});
 			} else if(type === 'apply_filters') {
 				vscode.commands.executeCommand('workbench.action.findInFiles', {
-					query: 'add_filter(\\s+)?\\((\\s+)?\'' + text,
+					query: 'add_filter(\\s+)?\\((\\s+)?\'' + text + "'",
 					triggerSearch: true,
 					isRegex: true,
 					isCaseSensitive: false,

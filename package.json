@@ -2,7 +2,7 @@
 	"name": "wordpress-hook-navigator",
 	"displayName": "Wordpress Hook Navigator",
 	"description": "Find function & tag definition of the wordpress hook",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "nogomin",
 	"icon": "images/wordpress-hook-navigator-logo.png",
 	"license": "MIT",
