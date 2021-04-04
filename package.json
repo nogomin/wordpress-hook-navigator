@@ -2,7 +2,7 @@
 	"name": "wordpress-hook-navigator",
 	"displayName": "Wordpress Hook Navigator",
 	"description": "Find function & tag definition of the wordpress hook",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "nogomin",
 	"icon": "images/wordpress-hook-navigator-logo.png",
 	"license": "MIT",
@@ -11,7 +11,7 @@
 		"url": "https://github.com/nogomin/wordpress-hook-navigator.git"
 	},
 	"engines": {
-		"vscode": "^1.55.0"
+		"vscode": "^1.34.0"
 	},
 	"categories": [
 		"Other"
@@ -56,7 +56,7 @@
 		"test": "node ./test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.55.0",
+		"@types/vscode": "^1.34.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.4",
 		"@types/node": "^12.11.7",
