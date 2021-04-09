@@ -2,7 +2,7 @@
 	"name": "wordpress-hook-navigator",
 	"displayName": "Wordpress Hook Navigator",
 	"description": "Find function & tag definition of the wordpress hook",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "nogomin",
 	"icon": "images/wordpress-hook-navigator-logo.png",
 	"license": "MIT",
@@ -36,8 +36,8 @@
 		"keybindings": [
 			{
 					"command": "extension.goToHookDefinition",
-					"key": "ctrl+a",
-					"mac": "cmd+a",
+					"key": "ctrl+shift+a",
+					"mac": "cmd+shift+a",
 					"when": "editorTextFocus"
 			}
 		],
